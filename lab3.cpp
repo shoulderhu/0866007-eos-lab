@@ -238,11 +238,5 @@ int main() {
         show_lcd(line);
     }
 
-
-
-
-
-    // printf("%d\n", calculator("1+2*3="));
-
     return 0;
 }
