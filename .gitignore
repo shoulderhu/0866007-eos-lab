@@ -1,0 +1,8 @@
+.gitignore
+
+.idea
+cmake-build-debug
+CMakeLists.txt
+
+lab3
+lab3.o
