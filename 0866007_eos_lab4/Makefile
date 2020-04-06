@@ -5,7 +5,7 @@ FLAGS = -g -Wall --static
 XLNX_DIR = /home/lab616/linux-xlnx
 obj-m = mydev.o
 
-all: mydev writer
+all: mydev writer reader
 
 mydev:
 	make -C $(XLNX_DIR) M=$(PWD) modules

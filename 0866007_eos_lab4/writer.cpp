@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        fprintf(stderr, "./writer <sec>\n");
+        fprintf(stderr, "Usage: ./writer <sec>\n");
         exit(EXIT_FAILURE);
     }
 
@@ -16,9 +16,10 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    char buf[16] = {};
+    char buf[2] = {};
     for (int i = atoi(argv[1]); i >= 0; --i) {
         snprintf(buf, sizeof(buf), "%d", i);
+        // printf("%s\n", buf);
         write(fd, buf, strlen(buf));
         sleep(1);
     }
