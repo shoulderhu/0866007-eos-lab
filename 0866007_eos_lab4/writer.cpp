@@ -1,8 +1,8 @@
-#include <cstdio>   // fprintf()
+#include <cstdio>   // fprintf(), snprintf()
 #include <cstdlib>  // exit()
-#include <cstring>
+#include <cstring>  // strlen()
 #include <fcntl.h>  // open()
-#include <unistd.h> // close()
+#include <unistd.h> // sleep(), close()
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
@@ -12,21 +12,16 @@ int main(int argc, char *argv[]) {
 
     int fd;
     if ((fd = open("/dev/mydev", O_RDWR)) == -1) {
-        perror("Open /dev/mydev failed.");
+        perror("/dev/mydev");
         exit(EXIT_FAILURE);
     }
 
-    int i;
-    char buf[8] = {};
-    /*
-    for (i = 0; ; ++i) {
-        i = i % strlen(argv[1]);
-        memset(buf, 0, sizeof(buf));
-        buf[0] = argv[1][i];
+    char buf[16] = {};
+    for (int i = atoi(argv[1]); i >= 0; --i) {
+        snprintf(buf, sizeof(buf), "%d", i);
         write(fd, buf, strlen(buf));
-        sleep(3);
+        sleep(1);
     }
-     */
 
     close(fd);
     return 0;
