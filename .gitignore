@@ -1,10 +1,11 @@
-.gitignore
-
 .idea
 cmake-build-debug
 CMakeLists.txt
 
-lab3
-lab3.o
+0866007_eos_lab3/lab3.o
+0866007_eos_lab3/lab3
+
+0866007_eos_lab4/lab4.o
+0866007_eos_lab4/lab4
 
 test.cpp
