@@ -5,7 +5,17 @@ CMakeLists.txt
 0866007_eos_lab3/lab3.o
 0866007_eos_lab3/lab3
 
-0866007_eos_lab4/lab4.o
-0866007_eos_lab4/lab4
+0866007_eos_lab4/.*
+0866007_eos_lab4/Module.symvers
+0866007_eos_lab4/modules.order
+0866007_eos_lab4/mydev.ko
+0866007_eos_lab4/mydev.mod.*
+0866007_eos_lab4/mydev.o
+
+0866007_eos_lab4/writer.o
+0866007_eos_lab4/writer
+
+0866007_eos_lab4/reader.o
+0866007_eos_lab4/reader
 
 test.cpp
