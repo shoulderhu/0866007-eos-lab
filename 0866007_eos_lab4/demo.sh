@@ -1,10 +1,7 @@
 #!/bin/sh
 
 set -x
-set -e
-
-make ARCH=arm clean
-make ARCH=arm
+# set -e
 
 rmmod -f mydev
 insmod mydev.ko
