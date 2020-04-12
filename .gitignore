@@ -18,4 +18,7 @@ CMakeLists.txt
 0866007_eos_lab4/reader.o
 0866007_eos_lab4/reader
 
+0866007_eos_lab5/lab5.o
+0866007_eos_lab5/lab5
+
 test.cpp
