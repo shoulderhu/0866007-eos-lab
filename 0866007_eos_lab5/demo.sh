@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 SESSION="session"
 PORT=4444
 
@@ -10,7 +8,7 @@ make
 
 tmux has-session -t $SESSION 2>/dev/null
 
-if [[ $? -ne 0 ]]
+if [[ $? -eq 0 ]]
 then
 	tmux kill-session -t $SESSION
 fi
