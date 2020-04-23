@@ -21,4 +21,10 @@ CMakeLists.txt
 0866007_eos_lab5/lab5.o
 0866007_eos_lab5/lab5
 
+0866007_eos_lab6/server.o
+0866007_eos_lab6/server
+
+0866007_eos_lab6/client.o
+0866007_eos_lab6/client
+
 test.cpp
