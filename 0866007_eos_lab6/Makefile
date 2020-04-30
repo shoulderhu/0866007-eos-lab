@@ -13,6 +13,6 @@ client: client.o
 	$(CXX) -o $@ $^ $(CFLAG)
 
 clean:
-	rm -f server server.o client client.o
+	rm -rf server server.o client client.o
 
 .PHONY: all clean

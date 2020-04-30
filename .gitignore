@@ -27,4 +27,10 @@ CMakeLists.txt
 0866007_eos_lab6/client.o
 0866007_eos_lab6/client
 
+0866007_eos_lab7/game.o
+0866007_eos_lab7/game
+
+0866007_eos_lab7/guess.o
+0866007_eos_lab7/guess
+
 test.cpp
