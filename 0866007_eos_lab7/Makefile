@@ -13,6 +13,6 @@ guess: guess.o
 	$(CXX) -o $@ $^
 
 clean:
-	rm -f lab7 lab7.o guess guess.o
+	rm -f game game.o guess guess.o
 
 .PHONY: all clean
