@@ -11,7 +11,7 @@ typedef struct {
     char result[8];
 } data;
 
-int shmid, pid, a = 1, b = 100;
+int shmid, pid, a = 1, b;
 data *shm;
 
 void timer_handler(int signum) {
@@ -34,11 +34,12 @@ void sigusr1_handler(int signum) {
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        fprintf(stderr, "Usage: %s <key> <pid>\n", argv[0]);
+        fprintf(stderr, "Usage: %s <key> <upper_bound> <pid>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
-    pid = strtol(argv[2], nullptr, 10);
+    b = strtol(argv[2], nullptr, 10);
+    pid = strtol(argv[3], nullptr, 10);
 
     key_t key = strtol(argv[1], nullptr, 10);
     if ((shmid = shmget(key, sizeof(data), 0644)) == -1) {
