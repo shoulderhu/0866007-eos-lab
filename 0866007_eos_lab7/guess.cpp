@@ -33,7 +33,7 @@ void sigusr1_handler(int signum) {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
+    if (argc != 4) {
         fprintf(stderr, "Usage: %s <key> <upper_bound> <pid>\n", argv[0]);
         exit(EXIT_FAILURE);
     }
