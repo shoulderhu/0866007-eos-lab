@@ -8,7 +8,7 @@ obj-m = mydev.o
 all: mydev writer reader
 
 mydev:
-	make -C $(XLNX_DIR) M=$(PWD) modules
+	make ARCH=arm -C $(XLNX_DIR) M=$(PWD) modules
 
 %.o: %.cpp
 	$(CXX) -c $< $(FLAGS)

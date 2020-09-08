@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
     }
 
     int ret;
-    char buf[8] = {};
+    char buf[16] = {};
 
     while (true) {
         if((ret = read(fd, buf, sizeof(buf))) == -1) {
@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
         printf("\n");
         */
 
-        if(write(connfd, buf, 7) == -1) {
+        if(write(connfd, buf, 16) == -1) {
             perror("write()");
             exit(EXIT_FAILURE);
         }

@@ -1,4 +1,4 @@
-'''Seven segment display of hex digits.'''
+'''eleven segment display of two hex digits.'''
 import sys
 
 if len(sys.argv) != 2:
@@ -15,13 +15,22 @@ screen.grid()
 # Coordinates of each segment are (x0, y0, x1, y1) 
 # given as offsets from top left measured in segment lengths.
 offsets = (
-    (0, 0, 1, 0),  # top
-    (1, 0, 1, 1),  # upper right
-    (1, 1, 1, 2),  # lower right
-    (0, 2, 1, 2),  # bottom
+    (0, 0, 1, 0),  # top left
+    (1, 0, 2, 0),  # top right
+    (2, 0, 2, 1),  # upper right
+    (2, 1, 2, 2),  # lower right
+    (1, 2, 2, 2),  # bottom right
+    (1, 2, 0, 2),  # bottom left
     (0, 1, 0, 2),  # lower left
     (0, 0, 0, 1),  # upper left
-    (0, 1, 1, 1),  # middle
+    (0, 0, 1, 1),  # upper left slash
+    (1, 0, 1, 1),  # upper middle
+    (1, 1, 2, 0),  # upper right slash
+    (1, 1, 2, 1),  # middle right
+    (1, 1, 2, 2),  # lower right slash
+    (1, 2, 1, 1),  # upper middle
+    (0, 2, 1, 1),   # lower left slash
+    (0, 1, 1, 1)  # middle left
 )
 
 import socket
@@ -46,15 +55,16 @@ class Digit:
 dig = Digit(screen)
 
 def update():
-	data = clisock.recv(7)
-	if data:
-		d = []
-		for i in data:
-			d.append(ord(i))
-		d = tuple(d)
-		print d
-		dig.show(d)
-	root.after(100, update)
+    data = clisock.recv(16)
+    data = data.replace("\n", "")
+    if data:
+        d = []
+        for i in data:
+            d.append(ord(i)-48)
+        d = tuple(d)
+        print d
+        dig.show(d)
+    root.after(100, update)
 root.after(100, update)
 root.mainloop()
 servsocket.close()
