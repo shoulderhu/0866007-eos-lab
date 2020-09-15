@@ -54,12 +54,10 @@ int main(int argc, char *argv[]) {
             exit(EXIT_FAILURE);
         }
 
-        /*
-        for (int i = 0; i < 7; ++i) {
+        for (int i = 0; i < 16; ++i) {
             printf("%d ", buf[i]);
         }
         printf("\n");
-        */
 
         if(write(connfd, buf, 16) == -1) {
             perror("write()");
@@ -69,7 +67,7 @@ int main(int argc, char *argv[]) {
         sleep(1);
     }
 
-    // close(fd);
-    // close(connfd);
+    close(fd);
+    close(connfd);
     return 0;
 }

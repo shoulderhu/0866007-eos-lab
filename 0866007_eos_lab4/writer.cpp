@@ -17,9 +17,10 @@ int main(int argc, char *argv[]) {
     }
 
     char buf[2] = {};
-    for (int i = atoi(argv[1]); i >= 0; --i) {
-        snprintf(buf, sizeof(buf), "%d", i);
-        // printf("%s\n", buf);
+    for (int i = atoi(argv[1]); i <= 91 ; i++) {
+        printf("%d", i);
+        snprintf(buf, sizeof(buf), "%c", i);
+        printf("%s\n", buf);
         write(fd, buf, strlen(buf));
         sleep(1);
     }

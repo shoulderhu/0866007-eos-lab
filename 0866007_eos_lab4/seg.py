@@ -29,8 +29,8 @@ offsets = (
     (1, 1, 2, 1),  # middle right
     (1, 1, 2, 2),  # lower right slash
     (1, 2, 1, 1),  # upper middle
-    (0, 2, 1, 1),   # lower left slash
-    (0, 1, 1, 1)  # middle left
+    (0, 2, 1, 1),  # lower left slash
+    (0, 1, 1, 1)   # middle left
 )
 
 import socket
@@ -56,11 +56,11 @@ dig = Digit(screen)
 
 def update():
     data = clisock.recv(16)
-    data = data.replace("\n", "")
+    #data = data.replace("\n", "")
     if data:
         d = []
         for i in data:
-            d.append(ord(i)-48)
+            d.append(ord(i))
         d = tuple(d)
         print d
         dig.show(d)
