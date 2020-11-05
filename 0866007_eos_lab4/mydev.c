@@ -45,8 +45,7 @@ static ssize_t my_read(struct file *fp, char *buf, size_t count, loff_t *fpos) {
     // printk("call read\n");
     int chr;
     char from[32] = {};
-    printk("***%c***", data);
-    switch (data) {
+        switch (data) {
         case 'A':
         case 'a':
             chr = map[0];
@@ -160,7 +159,6 @@ static ssize_t my_read(struct file *fp, char *buf, size_t count, loff_t *fpos) {
     for (i = 0; i < 16; ++i) {
         from[i] = (chr >> (15 - i)) & 1;
     }
-    printk("***************\n");
     copy_to_user(buf, from, 16);
     return count;
 }

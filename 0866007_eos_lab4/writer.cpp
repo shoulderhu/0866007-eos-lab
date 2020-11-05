@@ -17,9 +17,11 @@ int main(int argc, char *argv[]) {
     }
 
     char buf[2] = {};
-    for (int i = atoi(argv[1]); i <= 91 ; i++) {
-        printf("%d", i);
-        snprintf(buf, sizeof(buf), "%c", i);
+    int n;
+    for (int i = 0 ; i <= strlen(argv[1]) ; i++) {
+	n  = argv[1][i];
+	printf("%d|", n);
+        snprintf(buf, sizeof(buf), "%c", n);
         printf("%s\n", buf);
         write(fd, buf, strlen(buf));
         sleep(1);
